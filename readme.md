@@ -9,8 +9,7 @@ Create new application with source-to-image tools:
 oc new-app https://github.com/cscfi/rahti-flask-hello --name="course-flask-demo"
 ```
 
-Expose the application at "http://course-flask-demo.rahtiapp.fi"
+Create the route for the application
 ```bash
-oc expose svc/course-flask-demo --hostname="course-flask-demo.rahtiapp.fi"
+oc create route edge --service=course-flask-demo --insecure-policy='Redirect' --port=8080
 ```
-
